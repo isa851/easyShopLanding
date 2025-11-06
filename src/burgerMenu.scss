@@ -1,0 +1,128 @@
+.BurgerMenu {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  .statistics__burger {
+    position: absolute;
+    left: 40px;
+    top: 365px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 20;
+    padding: 20px;
+
+    .burger-line {
+      width: 28px;
+      height: 3px;
+      background-color: #581c87;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+
+      
+    }
+
+    &:hover .burger-line {
+      background-color: #7c3aed;
+    }
+  }
+
+  .burger-menu {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 78vh;
+    background-color: #f9f5ff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.4s ease;
+    padding-top: 120px;
+    z-index: 15;
+    overflow-y: auto;
+
+    &.active {
+      left: 0;
+    }
+  }
+}
+
+.content {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &_h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #581c87;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+.list{
+  display: flex;
+}
+
+.card {
+  width: 33%;
+  background: white;
+  border: 1px solid rgba(88, 28, 135, 0.5);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  // display: grid;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  &_h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #581c87;
+    margin: 0 0 15px 0;
+  }
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+
+    &_p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      flex: 1;
+      margin: 0;
+    }
+
+    &_img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+}
