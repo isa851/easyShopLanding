@@ -9,14 +9,12 @@ const resources = {
   ky: { translation: ky },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: localStorage.getItem("i18nextLng") || "ru", // язык по умолчанию
-    fallbackLng: "ru",
-    interpolation: { escapeValue: false },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: localStorage.getItem("i18nextLng") || "ru", 
+  fallbackLng: "ru",
+  interpolation: { escapeValue: false },
+});
 
 i18n.on("languageChanged", (lng) => {
   localStorage.setItem("i18nextLng", lng);

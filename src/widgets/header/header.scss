@@ -1,119 +1,112 @@
 .header {
-  background: #581C87;
+  background: #581c87;
   padding: 20px;
   display: flex;
   justify-content: center;
-  // position: relative;
-  
-}
 
-.header_nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100% !important; 
-  // max-width: 1400px;  
+  .header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% !important;
 
-}
+    &_h1 {
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-.header_nav_h1 {
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 700;
-  text-decoration: none;
-}
+    &_link {
+      font-family: "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
 
-.header_nav_link {
-  font-family: "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    }
 
-.header_nav_link:hover {
-  color: #d1b3ff;
-}
+    &_national {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+  }
 
-.header_nav_national {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+  .dropdown_wrapper {
+    position: relative;
 
-.dropdown_wrapper {
-  position: relative;
-}
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      background: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.2s ease;
 
-.dropdown_wrapper button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  background: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
+      &:hover {
+        color: #d1b3ff;
+        transform: scale(1.05);
+      }
 
-.dropdown_wrapper button:hover {
-  color: #d1b3ff;
-  transform: scale(1.05);
-}
+      &.active {
+        color: #d1b3ff;
+      }
+    }
 
-.dropdown_wrapper button.active {
-  color: #d1b3ff;
-}
+    .arrow {
+      transition: transform 0.3s ease;
+      font-size: 14px;
 
-.arrow {
-  transition: transform 0.3s ease;
-  font-size: 14px;
-}
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
 
-.arrow.rotate {
-  transform: rotate(180deg);
-}
+    .dropdown {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #6b21a8;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+      min-width: 140px;
+      z-index: 100;
 
-.dropdown {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background: #6b21a8;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-  transition: all 0.3s ease;
-  min-width: 140px;
-  z-index: 100;
-}
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
 
-.dropdown.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+      button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 15px;
+        text-align: left;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s ease;
 
-.dropdown button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 15px;
-  text-align: left;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.dropdown button:hover {
-  background: #7e22ce;
+        &:hover {
+          background: #7e22ce;
+        }
+      }
+    }
+  }
 }
