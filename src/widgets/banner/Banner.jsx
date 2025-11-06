@@ -21,15 +21,17 @@ const Banner = () => {
   console.error("Ошибка при получении данных", error);
 
   return (
-    <div className="banner " style={{ backgroundImage: `url(${bgImage})` }}>
-      {data.map((item) => (
-        <div key={item.id} className="container">
+    <div className="banner " style={{ backgroundImage: `url(${bgImage})` }}>     
+    <div className="container">
+      {data?.map((item) => (
+        <div key={item.id} className="banner__container">
           <h1 className="banner__title">
             {item.content}
           </h1>
           <button className="banner__button">Узнать больше</button>
         </div>
       ))}
+      </div>
     </div>
   );
 };
