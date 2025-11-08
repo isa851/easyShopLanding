@@ -24,7 +24,7 @@ const Deteil = () => {
   return (
     <section className="guarantee">
       <div className="guarantee__container">
-        <h2 className="guarantee__title">Раздел: Гарантия</h2>
+        <h2 className="guarantee__title"></h2>
 
         {data?.map((item) => (
           <div key={item.id} className="guarantee__item">

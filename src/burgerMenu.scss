@@ -77,8 +77,10 @@
   display: flex;
 }
 
+
+
 .card {
-  width: 33%;
+  width: 30%;
   background: white;
   border: 1px solid rgba(88, 28, 135, 0.5);
   border-radius: 15px;
@@ -86,10 +88,12 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   cursor: pointer;
-  // display: grid;
   margin-top: 10px;
   margin-bottom: 30px;
   text-decoration: none;
+     display: flex;
+    flex-wrap: wrap;
+
   
 
   &:hover {
@@ -116,6 +120,11 @@
       color: #333;
       flex: 1;
       margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &_img {
