@@ -1,30 +1,33 @@
 import "./deteil.scss";
 import { axiosApi } from "../../api/axiosApi";
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 const Deteil = () => {
   const params = useParams();
-   const { isPending, error, data } = useQuery({
-    queryKey: ["sectionsDetail/get"],
+  const location = useLocation();
+  const sectionName = location.state?.sectionName || "Раздел";
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["sectionsDetail/get", params.id],
     queryFn: async () => {
       const response = await axiosApi.get(`/homepage/sections/${params.id}`);
       return response?.data?.contents;
     },
   });
-  
-  if(isPending){
-    return <div>
-      Загрузка....
-    </div>
-  };
-  
-  console.error('Ошибка при получении данных', error);
+
+  if (isPending) {
+    return <div>Загрузка....</div>;
+  }
+
+  if (error) {
+    console.error("Ошибка при получении данных", error);
+  }
 
   return (
     <section className="guarantee">
       <div className="guarantee__container">
-        <h2 className="guarantee__title"></h2>
+        <h2 className="guarantee__title">Раздел: {sectionName}</h2>
 
         {data?.map((item) => (
           <div key={item.id} className="guarantee__item">
