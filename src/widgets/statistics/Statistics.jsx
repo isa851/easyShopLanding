@@ -2,7 +2,7 @@ import one from "../../shared/iconsStatistics/fluent_people-community-32-filled.
 import two from "../../shared/iconsStatistics/streamline-ultimate_e-commerce-touch-buy-bold.svg";
 import three from "../../shared/iconsStatistics/fluent-mdl2_product-variant.svg";
 import { useQuery } from "@tanstack/react-query";
-import { axiosApi } from "../../api/axiosApi";
+import axiosApi  from "../../api/axiosApi";
 import "./statistics.scss";
 
 const Statistics = () => {

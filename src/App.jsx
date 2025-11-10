@@ -6,6 +6,7 @@ import Deteil from "./widgets/deteil/Deteil";
 import SectionPage from "./sectionPage/SectionPage";
 import "./global.scss";
 import "./burgerMenu.scss";
+import { Suspense } from "react";
 
 function App() {
 
@@ -18,11 +19,13 @@ function App() {
   return (
     <div>
       <Header /> 
+      <Suspense  fallback={"loading..."}>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/section" element={<SectionPage  goBack={goBack}/>} />
         <Route path="/detail/:id" element={<Deteil   goBack={goBack}/>} />
       </Routes>
+      </Suspense>
       <Footer />
     </div>
   );

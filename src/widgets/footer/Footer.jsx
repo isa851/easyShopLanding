@@ -1,4 +1,4 @@
-import { axiosApi } from "../../api/axiosApi";
+import  axiosApi  from "../../api/axiosApi";
 import { useQuery } from "@tanstack/react-query";
 import instagramIcon from "../../shared/iconnetworks/ri_instagram-fill.svg";
 import telegramIcon from "../../shared/iconnetworks/streamline-logos_telegram-logo-1-block.svg";

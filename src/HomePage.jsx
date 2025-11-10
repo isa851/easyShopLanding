@@ -5,7 +5,7 @@ import Content from "./widgets/content/Content";
 import Card from "./widgets/content/card/Card";
 import { Link } from "react-router-dom";
 import "./burgerMenu.scss";
-import { axiosApi } from "./api/axiosApi";
+import  axiosApi  from "./api/axiosApi";
 import { useQuery } from "@tanstack/react-query";
 
 const HomePage = () => {

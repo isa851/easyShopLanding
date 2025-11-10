@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Card from "../widgets/content/card/Card";
 import Content from "../widgets/content/Content";
 import "./sectionPage.scss";
-import { axiosApi } from "../api/axiosApi";
+import  axiosApi  from "../api/axiosApi";
 
 
 const SectionPage = ({goBack}) => {

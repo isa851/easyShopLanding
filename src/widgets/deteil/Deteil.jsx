@@ -1,4 +1,4 @@
-import { axiosApi } from "../../api/axiosApi";
+import  axiosApi  from "../../api/axiosApi";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useLocation } from "react-router-dom";
 import { GoArrowLeft } from "react-icons/go";
