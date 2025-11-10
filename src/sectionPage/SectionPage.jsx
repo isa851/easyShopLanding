@@ -5,7 +5,7 @@ import "./sectionPage.scss";
 import { axiosApi } from "../api/axiosApi";
 
 
-const SectionPage = () => {
+const SectionPage = ({goBack}) => {
   const { isPending, error, data } = useQuery({
     queryKey: ["guarantee/get"],
     queryFn: async () => {
@@ -24,7 +24,8 @@ const SectionPage = () => {
 
   return (
     <div className="sectionPage">
-      <Content/>
+
+      <Content goBack={goBack}/>
 
       <div className="container list">
 

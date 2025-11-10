@@ -1,18 +1,18 @@
 .guarantee {
   padding: 60px 20px;
 
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;
   }
 
   &__title {
-    text-align: center;
+    // text-align: center !important;
     font-size: 28px;
     font-weight: 600;
     color: #6a1b9a;
     margin: 0 0 48px 0;
-    font-family: 'Roboto', sans-serif;
   }
 
   &__item {
@@ -30,12 +30,6 @@
       margin-bottom: 0;
     }
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      text-align: center;
-      padding: 24px;
-      gap: 20px;
-    }
   }
 
   &__content {
@@ -72,10 +66,19 @@
     object-fit: cover;
     display: block;
 
-    @media (max-width: 768px) {
-      width: 100%;
-      max-width: 320px;
-      height: auto;
-    }
+   
   }
+}
+
+
+
+.nav-row{
+  display: flex;
+  align-items: center;
+  gap: 400px;
+}
+
+.goBack{ 
+  cursor: pointer;
+  margin-bottom: 40px;
 }

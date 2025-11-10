@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./widgets/header/Heeader";
 import Footer from "./widgets/footer/Footer";
 import HomePage from "./HomePage";
@@ -9,18 +9,21 @@ import "./burgerMenu.scss";
 
 function App() {
 
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div>
-      <Router>
       <Header /> 
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/section" element={<SectionPage />} />
-        <Route path="/detail/:id" element={<Deteil />} />
+        <Route path="/section" element={<SectionPage  goBack={goBack}/>} />
+        <Route path="/detail/:id" element={<Deteil   goBack={goBack}/>} />
       </Routes>
       <Footer />
-    </Router>
     </div>
   );
 }

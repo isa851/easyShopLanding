@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 import { LuEarth } from "react-icons/lu";
-import { MdPlace } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import "./header.scss";
 
@@ -10,10 +9,7 @@ export default function Header() {
   const [openLanguage, setOpenLanguage] = useState(false);
   const { t, i18n } = useTranslation();
 
-  const toggleOpen = () => {
-    setOpen(!open);
-    setOpenLanguage(false);
-  };
+  
 
   const toggleLanguageOpen = () => {
     setOpenLanguage(!openLanguage);
@@ -25,8 +21,14 @@ export default function Header() {
     setOpenLanguage(false);
   };
 
+
   const currentLang =
-    i18n.language === "ru" ? "RU" : "KG";
+  i18n.language === "ru"
+    ? "RU"
+    : i18n.language === "en"
+    ? "EN"
+    : "中國人";
+
 
   return (
     <header className="header">
@@ -38,15 +40,6 @@ export default function Header() {
 
         <div className="header_nav_national">
           <div className="dropdown_wrapper">
-            <button
-              onClick={toggleOpen}
-              className={`header_nav_national_place ${open ? "active" : ""}`}
-            >
-              <MdPlace />
-              Кыргызстан
-              <SlArrowDown className={`arrow ${open ? "rotate" : ""}`} />
-            </button>
-
             {open && (
               <div className="dropdown show">
                 <button>Кыргызстан</button>
@@ -69,8 +62,9 @@ export default function Header() {
 
             {openLanguage && (
               <div className="dropdown show">
-                <button onClick={() => changeLanguage("ky")}>KG</button>
+                <button onClick={() => changeLanguage("en")}>EN</button>
                 <button onClick={() => changeLanguage("ru")}>RU</button>
+                <button onClick={() => changeLanguage("zh")}>中國人</button>
               </div>
             )}
           </div>
